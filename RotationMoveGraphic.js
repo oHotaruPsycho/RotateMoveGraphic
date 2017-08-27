@@ -1,14 +1,9 @@
 //=============================================================================
 // Sprite_Character メソッド拡張
 //=============================================================================
+var _Sprite_Character_Update = Sprite_Character.prototype.update;
 Sprite_Character.prototype.update = function() {
-    Sprite_Base.prototype.update.call(this);
-    this.updateBitmap();
-    this.updateFrame();
-    this.updatePosition();
-    this.updateAnimation();
-    this.updateBalloon();
-    this.updateOther();
+    _Sprite_Character_Update.call(this);
     //==追加分:START==
     if(this._character instanceof Game_Event && 
         this._character.eventId() > 0 && 
